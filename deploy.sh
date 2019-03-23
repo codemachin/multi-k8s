@@ -11,6 +11,7 @@ docker push viveksome/multi-server:$SHA
 docker push viveksome/multi-worker:$SHA
 
 kubectl apply -f k8s
+
 kubectl set image deployments/server-deployment server=viveksome/multi-server:$SHA
 kubectl set image deployments/client-deployment client=viveksome/multi-client:$SHA
 kubectl set image deployments/worker-deployment worker=viveksome/multi-worker:$SHA
